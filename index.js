@@ -4,7 +4,7 @@ const fs = require("fs");
 
 // Create questions array
 // Make a pretty header
-console.log("\n")
+console.log("\n");
 console.log("-".repeat(71));
 console.log("|"+" ".repeat(69)+"|");
 console.log("|"+" ".repeat(19)+"Welcome to the Readme Generator"+" ".repeat(19)+"|");
@@ -94,7 +94,7 @@ const questions = [
 
 function writeToFile(fileName, data) {
     const contents = generate.generateMd(data);
-    fs.appendFile(fileName, contents, (err) => {
+    fs.writeFile(fileName, contents, (err) => {
         err ? console.log(err) : console.log("Your readme has been generated, mate!")
     })
 

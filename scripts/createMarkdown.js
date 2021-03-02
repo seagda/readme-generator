@@ -42,55 +42,61 @@ const createLicensePara = (license => {
 
 // Generate the Markdown file
 const generateMd = (data => {
+    let spacer = "\n----------------\n";
     let titleContent = "";
     let TOC = "## Table of Contents\n";
     let readmeContent = "";
-    let spacer = "\n----------------\n";
+
     let position = 0;
     titleContent += `# ${data.title}\n`;
+    titleContent += `${spacer}`
+
     position++;
     TOC += `${position}. [Description](#description)\n`;
-    readmeContent += `## Description\n${data.description}${spacer}`
+    readmeContent += `${spacer}`
+    readmeContent += `## Description\n\n${data.description}\n`
+    readmeContent += `${spacer}`
 
     if (data.depLink) {
         position++;
         TOC += `${position}. [Deployed Link](#deployed)\n`;
-        readmeContent += `## Deployed Application${data.depLink}${spacer}`;
+        readmeContent += `## Deployed Application\n${data.depLink}\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.depends) {
         position++;
         TOC += `${position}. [Dependencies](#depends)\n`;
-        readmeContent += `## Deployed Application${data.depends}${spacer}`;
+        readmeContent += `## Dependencies\n${data.depends}\n`;
     };
 
     if (data.userStory) {
         position++;
         TOC += `${position}. [User Stories](#deployed)\n`;
-        readmeContent += `## Deployed Application${data.userStory}${spacer}`;
+        readmeContent += `## User Story\n${data.userStory}\n`;
     };
 
     if (data.install) {
         position++;
         TOC += `${position}. [Installation](#install)\n`;
-        readmeContent += `## Installation${data.install}${spacer}`;
+        readmeContent += `## Installation${data.install}\n`;
     };
 
     if (data.usage) {
         position++;
         TOC += `${position}. [How To Use](#usage)\n`;
-        readmeContent += `## Deployed Application${data.usage}${spacer}`;
+        readmeContent += `## Deployed Application${data.usage}\n`;
     };
 
     if (data.test) {
         position++;
         TOC += `${position}. [How to Test](#test)\n`;
-        readmeContent += `## How to Test${data.test}${spacer}`;
+        readmeContent += `## How to Test${data.test}\n`;
     };
 
         position++;
         TOC += `${position}. [Authors](#author)\n`;
-        readmeContent += `## Author(s)${data.author}${spacer}`;
+        readmeContent += `## Author(s)${data.author}\n`;
 
     if (data.github) {
         readmeContent += `View [${ data.github }](https://github.com/${ data.github }) on Github.\n\n`;
