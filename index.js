@@ -9,17 +9,26 @@ const questions = [
     {
      type: "input",
      message: "Title: ",
-     name: "title"
+     name: "title",
+     validate: input => {
+        return input === '' ? "Please enter a project title." : true;}
     },
     {
         type: "input",
         message: "Description: ",
-        name: "description"
+        name: "description",
+        validate: input => {
+            return input === '' ? "Please enter a description." : true;}
     },
     {
         type: "input",
-        message: "Deployed Link: ",
+        message: "Deployed Link (include 'http[s]://'): ",
         name: "depLink"
+    },
+    {
+        type: "input",
+        message: "Dependencies: ",
+        name: "depends"
     },
     {
         type: "input",
@@ -28,22 +37,29 @@ const questions = [
     },    
     {
         type: "input",
-        message: "Installation Instructions: ",
-        name: "installation"
+        message: "How to Install: ",
+        name: "install"
     },
     {
         type: "input",
-        message: "Test Instructions: ",
+        message: "How to Use: ",
+        name: "usage"
+    },
+    {
+        type: "input",
+        message: "How to Test: ",
         name: "test"
     },
     {
         type: "input",
         message: "Author Name: ",
-        name: "author"
+        name: "author",
+        validate: input => {
+            return input === '' ? "Please enter an author name." : true;}
     },    
     {
         type: "input",
-        message: "Author Github: ",
+        message: "Author Github Username: ",
         name: "github"
     },
     {
@@ -56,7 +72,8 @@ const questions = [
         message: "Choose a License: ",
         name: "license",
         choices: [
-            "Apache 2.0 License", 
+            "Apache 2.0 License",
+            "Creative Commons - CC0",
             "CC BY-SA Attribution-ShareAlike 4.0 International", 
             "CC BY-NC Attribution-NonCommercial 4.0 International",
             "GNU GPL v3", 
