@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "A command line Readme generator that captures adds elements to a professional-quality readme file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shea M. Mullaney",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:seagda/readme-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seagda/readme-generator/bugs"
+  },
+  "homepage": "https://github.com/seagda/readme-generator",
+  "devDependencies": {}
+}
