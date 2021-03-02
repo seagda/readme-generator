@@ -1,9 +1,15 @@
-const createMd = require("./scripts/createMarkdown");
+const generate = require("./scripts/createMarkdown.js");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { generate } = require("rxjs");
 
 // Create questions array
+// Make a pretty header
+console.log("\n")
+console.log("-".repeat(71));
+console.log("|"+" ".repeat(69)+"|");
+console.log("|"+" ".repeat(19)+"Welcome to the Readme Generator"+" ".repeat(19)+"|");
+console.log("|"+" ".repeat(69)+"|");
+console.log("-".repeat(71)+"\n\n");
 
 const questions = [
     {
@@ -71,7 +77,7 @@ const questions = [
         type: "list",
         message: "Choose a License: ",
         name: "license",
-        choices: [
+        choices: [ 
             "Apache 2.0 License",
             "Creative Commons - CC0",
             "CC BY-SA Attribution-ShareAlike 4.0 International", 
@@ -87,7 +93,7 @@ const questions = [
 // write to the readme file
 
 function writeToFile(fileName, data) {
-    const contents = generate.createMd(data);
+    const contents = generate.generateMd(data);
     fs.appendFile(fileName, contents, (err) => {
         err ? console.log(err) : console.log("Your readme has been generated, mate!")
     })

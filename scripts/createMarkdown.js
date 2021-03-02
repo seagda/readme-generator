@@ -1,3 +1,4 @@
+
 // Link to the appropriate license
 const addLink = (license => {
     switch (license) {
@@ -43,9 +44,8 @@ const createLicensePara = (license => {
 const generateMd = (data => {
     let titleContent = "";
     let TOC = "## Table of Contents\n";
-    let spacer = "\n----------------\n";
     let readmeContent = "";
-
+    let spacer = "\n----------------\n";
     let position = 0;
     titleContent += `# ${data.title}\n`;
     position++;
@@ -99,19 +99,13 @@ const generateMd = (data => {
     if (data.contribute) {
         position++;
         TOC += `${position}. [Contributions(#contribute)\n`;
-        readmeContent += `## Contributions${data.contribute}${spacer}`;
+        readmeContent += `## Contributions${spacer}${data.contribute}`;
     };
 
     if (data.license) {
         position++;
         TOC += `${position}. [License](#license)\n`;
         readmeContent += `## License${data.license}${spacer}`;
-    };
-
-    if (data.depLink) {
-        position++;
-        TOC += `${position}. [Deployed Link](#deployed)\n`;
-        readmeContent += `## Deployed Application${data.depLink}${spacer}`;
     };
 
     return titleContent + TOC + readmeContent;
