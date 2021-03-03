@@ -68,50 +68,57 @@ const generateMd = (data => {
         position++;
         TOC += `${position}. [Dependencies](#depends)\n`;
         readmeContent += `## Dependencies\n${data.depends}\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.userStory) {
         position++;
         TOC += `${position}. [User Stories](#deployed)\n`;
         readmeContent += `## User Story\n${data.userStory}\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.install) {
         position++;
         TOC += `${position}. [Installation](#install)\n`;
-        readmeContent += `## Installation${data.install}\n`;
+        readmeContent += `## Installation\n${data.install}\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.usage) {
         position++;
         TOC += `${position}. [How To Use](#usage)\n`;
-        readmeContent += `## Deployed Application${data.usage}\n`;
+        readmeContent += `## Deployed Application\n${data.usage}\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.test) {
         position++;
         TOC += `${position}. [How to Test](#test)\n`;
-        readmeContent += `## How to Test${data.test}\n`;
+        readmeContent += `## How to Test\n${data.test}\n`;
+        readmeContent += `${spacer}`
     };
 
         position++;
         TOC += `${position}. [Authors](#author)\n`;
-        readmeContent += `## Author(s)${data.author}\n`;
+        readmeContent += `## Author(s)\n${data.author}\n`;
 
     if (data.github) {
         readmeContent += `View [${ data.github }](https://github.com/${ data.github }) on Github.\n\n`;
+        readmeContent += `${spacer}`
     };
 
     if (data.contribute) {
         position++;
         TOC += `${position}. [Contributions(#contribute)\n`;
-        readmeContent += `## Contributions${spacer}${data.contribute}`;
+        readmeContent += `## Contributions\n${spacer}${data.contribute}`;
+        readmeContent += `${spacer}`
     };
 
     if (data.license) {
         position++;
         TOC += `${position}. [License](#license)\n`;
-        readmeContent += `## License${data.license}${spacer}`;
+        readmeContent += `## License\n${data.license}${spacer}`;
     };
 
     return titleContent + TOC + readmeContent;
