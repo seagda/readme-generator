@@ -35,7 +35,7 @@ const addLink = (license => {
 });
 
 // add the license paragraph to the markdown
-const createLicensePara = (license => {
+const linkLicense= (license => {
     return addLink(license)
 });
 
@@ -49,18 +49,17 @@ const generateMd = (data => {
 
     let position = 0;
     titleContent += `# ${data.title}\n`;
-    titleContent += `${spacer}`
 
     position++;
     TOC += `${position}. [Description](#description)\n`;
     readmeContent += `${spacer}`
-    readmeContent += `## Description\n\n${data.description}\n`
+    readmeContent += `## Description\n${data.description}`
     readmeContent += `${spacer}`
 
     if (data.depLink) {
         position++;
         TOC += `${position}. [Deployed Link](#deployed)\n`;
-        readmeContent += `## Deployed Application\n${data.depLink}\n`;
+        readmeContent += `## Deployed Application\n${data.depLink}`;
         readmeContent += `${spacer}`
     };
 
@@ -73,35 +72,35 @@ const generateMd = (data => {
 
     if (data.userStory) {
         position++;
-        TOC += `${position}. [User Stories](#deployed)\n`;
-        readmeContent += `## User Story\n${data.userStory}\n`;
+        TOC += `${position}. [User Story](#userstory)\n`;
+        readmeContent += `## User Story\n${data.userStory}`;
         readmeContent += `${spacer}`
     };
 
     if (data.install) {
         position++;
         TOC += `${position}. [Installation](#install)\n`;
-        readmeContent += `## Installation\n${data.install}\n`;
+        readmeContent += `## Installation\n${data.install}`;
         readmeContent += `${spacer}`
     };
 
     if (data.usage) {
         position++;
         TOC += `${position}. [How To Use](#usage)\n`;
-        readmeContent += `## Deployed Application\n${data.usage}\n`;
+        readmeContent += `## How to Use\n${data.usage}`;
         readmeContent += `${spacer}`
     };
 
     if (data.test) {
         position++;
         TOC += `${position}. [How to Test](#test)\n`;
-        readmeContent += `## How to Test\n${data.test}\n`;
+        readmeContent += `## How to Test\n${data.test}`;
         readmeContent += `${spacer}`
     };
 
         position++;
         TOC += `${position}. [Authors](#author)\n`;
-        readmeContent += `## Author(s)\n${data.author}\n`;
+        readmeContent += `## Author(s)\n${data.author}`;
 
     if (data.github) {
         readmeContent += `View [${ data.github }](https://github.com/${ data.github }) on Github.\n\n`;
@@ -111,14 +110,14 @@ const generateMd = (data => {
     if (data.contribute) {
         position++;
         TOC += `${position}. [Contributions(#contribute)\n`;
-        readmeContent += `## Contributions\n${spacer}${data.contribute}`;
+        readmeContent += `## Contributions\n${data.contribute}`;
         readmeContent += `${spacer}`
     };
 
     if (data.license) {
         position++;
         TOC += `${position}. [License](#license)\n`;
-        readmeContent += `## License\n${data.license}${spacer}`;
+        readmeContent += `## License\n[${ data.license }]${ linkLicense(data.license) }`;
     };
 
     return titleContent + TOC + readmeContent;
