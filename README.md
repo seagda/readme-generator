@@ -18,6 +18,8 @@ This CLI application uses the Inquirer NPM package to create a formatted markdow
 
 https://www.youtube.com/watch?v=pg_b2M8LsCI
 
+![CLI Readme generator](./screenshot.png)
+
 ----------------
 ## Dependencies
 
@@ -41,4 +43,4 @@ s.d.mullaney. View me [seagda](https://github.com/seagda) on Github.
 ----------------
 ## License
 
-[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)
+[Creative Commons - CC0](http://creativecommons.org/publicdomain/zero/1.0/)
