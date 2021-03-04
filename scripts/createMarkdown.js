@@ -123,4 +123,4 @@ const generateMd = (data => {
     return titleContent + TOC + readmeContent;
 });
 
-module.exports = { generateMd, addLink, createLicensePara };
+module.exports = { generateMd, addLink, linkLicense };

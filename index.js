@@ -14,31 +14,31 @@ console.log("-".repeat(71)+"\n\n");
 const questions = [
     {
      type: "input",
-     message: "Title: ",
+     message: "Enter your Project's Title: ",
      name: "title",
      validate: input => {
         return input === '' ? "Please enter a project title." : true;}
     },
     {
         type: "input",
-        message: "Description: ",
+        message: "Describe your project: ",
         name: "description",
         validate: input => {
             return input === '' ? "Please enter a description." : true;}
     },
     {
         type: "input",
-        message: "Deployed Link (include 'http[s]://'): ",
+        message: "Where to view your deployed app (include 'http[s]://'): ",
         name: "depLink"
     },
     {
         type: "input",
-        message: "Dependencies: ",
+        message: "Enter any Dependencies: ",
         name: "depends"
     },
     {
         type: "input",
-        message: "User Story: ",
+        message: "What's the User Story: ",
         name: "userStory"
     },    
     {
@@ -58,14 +58,14 @@ const questions = [
     },
     {
         type: "input",
-        message: "Author Name: ",
+        message: "Enter the Author Name: ",
         name: "author",
         validate: input => {
             return input === '' ? "Please enter an author name." : true;}
     },    
     {
         type: "input",
-        message: "Author Github Username: ",
+        message: "Enter author's Github Username: ",
         name: "github"
     },
     {
