@@ -109,7 +109,7 @@ const generateMd = (data => {
 
     if (data.contribute) {
         position++;
-        TOC += `${position}. [Contributions(#contribute)\n`;
+        TOC += `${position}. [Contributions](#contribute)\n`;
         readmeContent += `## Contributions\n\n${data.contribute}\n`;
         readmeContent += `${spacer}`
     };
