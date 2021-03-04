@@ -1,4 +1,4 @@
-# Good Readme Generator
+# Great Title Here
 ## Table of Contents
 1. [Description](#description)
 2. [Dependencies](#depends)
@@ -10,25 +10,37 @@
 
 ----------------
 ## Description
-Describe the project here
+
+This is awesome
+
 ----------------
 ## Dependencies
-Node, Inquirer NPM package
+
+Node.js, Inquirer NPM package
 
 ----------------
 ## User Story
-As a web developer, I want an easier way to make good README files for my projects
+
+As a web developer, I want an easy way to produce formatted, quality readme files.
+
 ----------------
 ## How to Use
-Run in Node terminal window, 
+
+Run in Node, then do what I'm doing here.
+
 ----------------
 ## Author(s)
-shea mullaneyView [seagda](https://github.com/seagda) on Github.
+
+s.d.mullaney
+View [seagda](https://github.com/seagda) on Github.
 
 
 ----------------
 ## Contributions
-Feel free
+
+Feel free.
+
 ----------------
 ## License
+
 [Creative Commons - CC0](http://creativecommons.org/publicdomain/zero/1.0/)

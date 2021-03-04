@@ -95,7 +95,7 @@ const questions = [
 function writeToFile(fileName, data) {
     const contents = generate.generateMd(data);
     fs.writeFile(fileName, contents, (err) => {
-        err ? console.log(err) : console.log("Your readme has been generated, mate!")
+        err ? console.log(err) : console.log("\n\nYour readme has been generated, mate!\n\n\n")
     })
 
 };
